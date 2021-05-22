@@ -1,7 +1,9 @@
+@import url("https://fonts.googleapis.com/css2?family=KoHo:wght@200;300;400;500;600;700&display=swap");
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: "KoHo", sans-serif;
 }
 
 /* css variables that I'd be makining use of in this project
@@ -12,4 +14,102 @@
   --secondary: ghostwhite;
   --text-primary: #0366d6;
   --base-color: #fff;
+  --success: #2ea44f;
+  --muted-text: rgb(114, 111, 111);
+}
+
+#root {
+  height: 100%;
+}
+
+header {
+  background: var(--primary);
+  height: 55px;
+  width: 100%;
+  position: sticky;
+  z-index: 1;
+}
+
+header h1 {
+  text-align: center;
+  padding: 5px 0;
+  color: var(--base-color);
+  font-weight: normal;
+}
+
+form .form-wrapper {
+  display: flex;
+  justify-content: center;
+  padding: 20px 0;
+  height: 120px;
+  width: 100%;
+  position: absolute;
+  top: 55%;
+  transform: translateY(-50%);
+}
+
+.form-wrapper input,
+button {
+  height: 45px;
+}
+
+.form-wrapper input {
+  width: 30%;
+  border: none;
+  background: var(--secondary);
+  padding: 5px 15px;
+  color: var(--muted-text);
+  border-radius: 8px 0 0 8px;
+  outline: none;
+}
+
+.form-wrapper input:focus {
+  border: 1px solid var(--primary);
+}
+
+.form-wrapper input::placeholder {
+  font-size: 15px;
+}
+
+.form-wrapper button {
+  width: 10%;
+  border: none;
+  background: var(--success);
+  color: var(--base-color);
+  border-radius: 0 8px 8px 0;
+  font-size: 18px;
+  outline: none;
+}
+
+.form-wrapper button:hover {
+  cursor: pointer;
+}
+
+@media only screen and (max-width: 576px) {
+  .form-wrapper {
+    flex-direction: column;
+    justify-content: space-between !important;
+    padding: 0 20px !important;
+  }
+
+  .form-wrapper input {
+    width: 100%;
+    border-radius: 5px;
+  }
+
+  .form-wrapper button {
+    border-radius: 5px;
+    margin: 0 auto;
+    width: 100%;
+  }
+}
+
+@media only screen and (min-width: 577px) and (max-width: 920px) {
+  .form-wrapper {
+    padding: 0 20px !important;
+  }
+
+  .form-wrapper input {
+    width: 60%;
+  }
 }
