@@ -1,0 +1,15 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* css variables that I'd be makining use of in this project
+    instead of having to retype them over and over again
+  */
+:root {
+  --primary: #24292e;
+  --secondary: ghostwhite;
+  --text-primary: #0366d6;
+  --base-color: #fff;
+}
