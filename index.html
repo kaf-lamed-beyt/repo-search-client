@@ -4,9 +4,14 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#24292e" />
     <title>Github Search Client</title>
     <link rel="stylesheet" href="./style.css" />
-    <meta name="theme-color" content="#24292e" />
+    <!-- fontawesome icon kit -->
+    <script
+      src="https://kit.fontawesome.com/d9e33f69d6.js"
+      crossorigin="anonymous"
+    ></script>
   </head>
   <body>
     <header>
@@ -14,7 +19,7 @@
     </header>
     <div id="root">
       <!-- the search component will go here -->
-      <form action="">
+      <form id="form-wrapper">
         <div class="form-wrapper">
           <input
             type="text"
@@ -22,9 +27,29 @@
             class="github-username"
             placeholder="Username of the github account. You can try 'ireade'"
           />
-          <button class="search-username">Find</button>
+          <button type="submit" class="search-username" id="search-btn">
+            Find
+          </button>
         </div>
       </form>
+      <div class="repos-wrapper">
+        <div class="repository">
+          <p class="repo-name">ireaderinokun.com</p>
+          <p class="repo-description">
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ea,
+            laborum.
+          </p>
+          <div class="repo-details">
+            <ul>
+              <li class="primary-lang">
+                <span class="circle" style="color: orange"></span>HTML
+              </li>
+              <li class="stars"><i class="far fa-star"></i>22</li>
+              <li class="updated-at">Updated on Sep 30</li>
+            </ul>
+          </div>
+        </div>
+      </div>
     </div>
     <script src="./index.js"></script>
   </body>

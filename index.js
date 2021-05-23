@@ -1,1 +1,5 @@
-// all functionalties of the project will go here
+const button = document.getElementById("search-btn");
+
+// button.addEventListener("click", function () {
+//   window.location.href = "";
+// });
