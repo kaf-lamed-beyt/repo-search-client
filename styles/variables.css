@@ -1,0 +1,13 @@
+/* css variables that I'd be makining use of in this project
+    instead of having to retype them over and over again
+  */
+:root {
+  --primary: #24292e;
+  --secondary: ghostwhite;
+  --text-primary: #0366d6;
+  --base-color: #fff;
+  --success: #2ea44f;
+  --muted-text: rgb(114, 111, 111);
+  --muted-strong: rgb(208, 208, 213);
+  --active-link: #f9826c;
+}
