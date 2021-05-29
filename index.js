@@ -1,3 +1,5 @@
+import { config } from "./config";
+
 const searchResults = document.querySelector("#results");
 const form = document.querySelector("#form-wrapper");
 
@@ -42,7 +44,7 @@ const fetchResults = (e) => {
     method: "post",
     headers: {
       "Content-Type": "application/json",
-      Authorization: "bearer " + "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",
+      Authorization: "bearer " + config.TOKEN,
       "User-Agent": "repo-search-client",
     },
     body: JSON.stringify({
