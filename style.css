@@ -231,9 +231,14 @@ button {
   white-space: nowrap;
 }
 
-.repository .star_button {
+.repository .btn-container {
   height: 30px;
-  width: 70px;
+  width: 90px;
+}
+
+.repository button {
+  height: 100%;
+  width: 100%;
   background: var(--secondary);
   border: 1px solid var(--muted-strong);
   border-radius: 4px;
@@ -354,12 +359,13 @@ button {
 
   .user_bio .bio_details {
     padding: 20px 0;
+    width: 300px;
   }
 
   .repos_wrapper {
     height: 100%;
     padding: 0 8px;
-    width: 100%;
+    margin: 0 auto;
   }
 
   .repos_wrapper .repository {
@@ -384,12 +390,14 @@ button {
 
   .repository .repo_desc_container {
     height: 100%;
+    width: 250px;
   }
 
   .repository .repo_description {
     padding: 0 0 12px 0;
     height: 20%;
     font-size: 13px;
+    width: 250px;
   }
 
   .repository .repo_details ul {
@@ -403,13 +411,13 @@ button {
     padding: 0 10px 0 0;
   }
 
-  .repository .star_button {
+  .repository button {
     background: var(--secondary);
     border: 1px solid var(--muted-strong);
     border-radius: 4px;
     outline: none;
     width: 100%;
-    margin: 35px 0 0 15px;
+    margin: 35px 0 0 0;
   }
 
   .repository .star_button:hover {

@@ -121,9 +121,11 @@ const fetchResults = (e) => {
                           </ul>
                         </div>
                       </div>
-                      <button class="star_button">
-                        <i class="far fa-star"></i> Star
-                      </button>
+                      <div class="btn-container">
+                        <button class="star_button">
+                          <i class="far fa-star"></i> Star
+                        </button>
+                      </div>
                     </div>
                 `;
               })
