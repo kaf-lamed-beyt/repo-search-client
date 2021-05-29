@@ -1,14 +1,7 @@
-// // accessing the process variable
-// window.process = {
-//   env: {
-//     NODE_ENV: "development",
-//   },
-// };
+import TOKEN from "./js/config";
 
 const searchResults = document.querySelector("#results");
 const form = document.querySelector("#form-wrapper");
-
-const token = "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";
 
 // constructing the graphql query function
 // that'd be called in the 'fetch results
@@ -51,7 +44,7 @@ const fetchResults = (e) => {
     method: "post",
     headers: {
       "Content-Type": "application/json",
-      Authorization: `bearer ${token}`,
+      Authorization: `bearer ${TOKEN}`,
       "User-Agent": "repo-search-client",
     },
     body: JSON.stringify({

@@ -403,11 +403,6 @@ button {
     padding: 0 10px 0 0;
   }
 
-  .repo_details li:nth-child(2),
-  li:nth-child(3) {
-    display: none;
-  }
-
   .repository .star_button {
     background: var(--secondary);
     border: 1px solid var(--muted-strong);
