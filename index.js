@@ -1,4 +1,4 @@
-import TOKEN from "./config";
+import TOKEN from "./js/config";
 
 const searchResults = document.querySelector("#results");
 const form = document.querySelector("#form-wrapper");
