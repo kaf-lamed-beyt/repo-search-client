@@ -13,12 +13,14 @@
   height: 100%;
 }
 
-header {
+.app-header {
   background: var(--primary);
   height: 55px;
   width: 100%;
   animation: fadeIn 0.3s ease-in forwards 1s;
   transition: all ease-in 0.3s;
+  position: fixed;
+  z-index: 3;
 }
 
 header h1 {
@@ -85,6 +87,8 @@ button {
 
 /* results section style begins here */
 .result_header {
+  margin-top: 55px;
+  width: 100%;
   background: var(--base-color);
   height: 55px;
   border-bottom: 1px solid var(--muted-strong);
@@ -101,7 +105,6 @@ button {
   width: 30px;
   border-radius: 50%;
   background: var(--primary);
-  border: 1px solid red;
 }
 
 .result_header ul li {
@@ -124,9 +127,10 @@ button {
 
 .results_container {
   display: flex;
+  padding-top: 4%;
 }
 
-.results_container .repos_wrapper {
+.repos_wrapper {
   margin-top: 5%;
 }
 
@@ -164,7 +168,7 @@ button {
 }
 
 .repos_wrapper .repository {
-  height: 120px;
+  height: 145px;
   border-bottom: 1px solid var(--muted-strong);
   margin-top: 10px;
   display: flex;
@@ -176,6 +180,7 @@ button {
   color: var(--text-primary);
   font-size: 18px;
   padding: 0 0 12px 0;
+  text-decoration: none;
 }
 
 .repo_name:hover {
@@ -184,19 +189,22 @@ button {
 }
 
 .repository .repo_desc_container {
-  height: 400px;
+  height: 600px;
   width: 100%;
 }
 
 .repository .repo_description {
   padding: 0 0 12px 0;
-  width: 650px;
+  width: 400px;
+  height: 220px;
+  font-size: 13px;
 }
 
 .repository .repo_details ul {
   display: flex;
   list-style: none;
   font-size: 12px;
+  padding: 17px 0;
 }
 
 .repository .repo_details ul li {
@@ -231,6 +239,34 @@ button {
 
 .primary_lang span {
   padding: 0 0 0 5px;
+}
+
+.loader {
+  display: flex;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.loader div {
+  height: 20px;
+  width: 20px;
+  margin: 0 50px 0 0;
+  border-radius: 50%;
+  background: var(--primary);
+  animation: balls 0.3s ease-in forwards;
+  opacity: 0;
+}
+
+.loader div:nth-child(1) {
+  animation-delay: 0.2s;
+}
+
+.loader div:nth-child(2) {
+  animation-delay: 0.4s;
+}
+
+.loader div:nth-child(3) {
+  animation-delay: 0.6s;
 }
 
 @media only screen and (max-width: 576px) {
@@ -292,8 +328,8 @@ button {
 
   .results_container .user_profile {
     padding: 10px 13px;
-    margin-top: 2%;
-    z-index: 2;
+    margin-top: 65px;
+    z-index: -1;
     display: flex;
   }
 
@@ -326,7 +362,7 @@ button {
   }
 
   .repos_wrapper .repository {
-    height: 120px;
+    height: 20%;
     border-bottom: 1px solid var(--muted-strong);
     margin-bottom: 10px;
     display: flex;
@@ -346,18 +382,21 @@ button {
   }
 
   .repository .repo_desc_container {
-    width: 100%;
+    height: 100%;
   }
 
   .repository .repo_description {
     padding: 0 0 12px 0;
-    width: 100%;
+    width: 265px;
+    height: 20%;
+    font-size: 13px;
   }
 
   .repository .repo_details ul {
     display: flex;
     list-style: none;
     font-size: 12px;
+    margin-bottom: 0%;
   }
 
   .repository .repo_details ul li {
@@ -385,5 +424,14 @@ button {
 
   .form-wrapper input {
     width: 60%;
+  }
+
+  /* result styles */
+  .results_container {
+    padding: 55px 0;
+  }
+
+  .results_container .repos_wrapper {
+    padding: 20px 0;
   }
 }

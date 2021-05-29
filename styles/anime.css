@@ -33,3 +33,26 @@
     opacity: 1;
   }
 }
+
+@keyframes balls {
+  0% {
+    opacity: 0.2;
+    transform: translateY(20px);
+  }
+  25% {
+    opacity: 0.4;
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+    opacity: 0.6;
+  }
+  75% {
+    transform: translateY(0px);
+    opacity: 0.8;
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(20px);
+  }
+}

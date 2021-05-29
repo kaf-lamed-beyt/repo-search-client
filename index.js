@@ -3,6 +3,14 @@ const form = document.querySelector("#form-wrapper");
 
 // loading element that comes up during the
 // data fetching process.
+// let loader = `
+//   <div class="loader">
+//     <div></div>
+//     <div></div>
+//     <div></div>
+//   </div>
+// `;
+// searchResults.innerHTML = loader;
 
 // constructing the graphql query function
 // that'd be called in the 'fetch results
@@ -18,7 +26,7 @@ const getUserRepo = (queryString) => `
             nodes {
                 name
                 url 
-                createdAt
+                updatedAt
                 stargazerCount
                 forkCount
                 description
@@ -86,44 +94,49 @@ const fetchResults = (e) => {
               </p>
             </div>
           </div>
-          ${repositories.nodes
-            .map((item) => {
-              return `
-                <div class="repos_wrapper">
-                  <div class="repository">
-                    <div class="repo_desc_container">
-                      <p class="repo_name">
-                        <a
-                          class="repo_name"target="__blank"
-                          href=${item.url}
-                        > 
-                          ${item.name}
-                        </a>
-                      </p>
-                      <p class="repo_description">
-                        ${item.description}
-                      </p>
-                      <div class="repo_details">
-                        <ul>
-                          <li class="primary_lang">
-                            <div class="circle" style="background: ${item.primaryLanguage.color}"></div> 
-                            <span>${item.primaryLanguage.name}</span>
-                          </li>
-                          <li class="stars"><i class="far fa-star"></i> ${item.stargazerCount}</li>
-                          <li class="forks"><i class="fas fa-code-branch"></i> ${item.forkCount}</li>
-                          <li class="updated_at">Updated on Sep 30</li>
-                        </ul>
+          <div class="repos_wrapper">
+            ${repositories.nodes
+              .map((item) => {
+                return `
+                    <div class="repository">
+                      <div class="repo_desc_container">
+                        <p class="repo_name">
+                          <a
+                            class="repo_name"target="__blank"
+                            href=${item.url}
+                          > 
+                            ${item.name}
+                          </a>
+                        </p>
+                        <p class="repo_description">
+                          ${item.description ? item.description : ""}
+                        </p>
+                        <div class="repo_details">
+                          <ul>
+                            <li class="primary_lang">
+                              <div class="circle" style="background: ${
+                                item.primaryLanguage.color
+                              }"></div> 
+                              <span>${item.primaryLanguage.name}</span>
+                            </li>
+                            <li class="stars"><i class="far fa-star"></i> ${
+                              item.stargazerCount
+                            }</li>
+                            <li class="forks"><i class="fas fa-code-branch"></i> ${
+                              item.forkCount
+                            }</li>
+                            <li class="updated_at">Updated on March 21</li>
+                          </ul>
+                        </div>
                       </div>
+                      <button class="star_button">
+                        <i class="far fa-star"></i> Star
+                      </button>
                     </div>
-                    <button class="star_button">
-                      <i class="far fa-star"></i> Star
-                    </button>
-                  </div>
-                </div>
-              </div>
-            `;
-            })
-            .join("")}
+                `;
+              })
+              .join("")}
+          </div>
         </div>
       `;
       form.style.display = "none";
