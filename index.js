@@ -1,17 +1,6 @@
 const searchResults = document.querySelector("#results");
 const form = document.querySelector("#form-wrapper");
 
-// loading element that comes up during the
-// data fetching process.
-// let loader = `
-//   <div class="loader">
-//     <div></div>
-//     <div></div>
-//     <div></div>
-//   </div>
-// `;
-// searchResults.innerHTML = loader;
-
 // constructing the graphql query function
 // that'd be called in the 'fetch results
 const getUserRepo = (queryString) => `
@@ -53,7 +42,7 @@ const fetchResults = (e) => {
     method: "post",
     headers: {
       "Content-Type": "application/json",
-      Authorization: "bearer " + "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",
+      Authorization: "bearer " + "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",
       "User-Agent": "repo-search-client",
     },
     body: JSON.stringify({
