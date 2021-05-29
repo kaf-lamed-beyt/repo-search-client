@@ -1,7 +1,14 @@
-import { config } from "./config";
+// // accessing the process variable
+// window.process = {
+//   env: {
+//     NODE_ENV: "development",
+//   },
+// };
 
 const searchResults = document.querySelector("#results");
 const form = document.querySelector("#form-wrapper");
+
+const token = "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";
 
 // constructing the graphql query function
 // that'd be called in the 'fetch results
@@ -44,7 +51,7 @@ const fetchResults = (e) => {
     method: "post",
     headers: {
       "Content-Type": "application/json",
-      Authorization: "bearer " + config.TOKEN,
+      Authorization: `bearer ${token}`,
       "User-Agent": "repo-search-client",
     },
     body: JSON.stringify({
@@ -86,10 +93,11 @@ const fetchResults = (e) => {
             </div>
           </div>
           <div class="repos_wrapper">
+            <input type="text" name="repos" placeholder="find a repository" />
             ${repositories.nodes
-              .map((item) => {
+              .map((item, index) => {
                 return `
-                    <div class="repository">
+                    <div class="repository" key=${index}>
                       <div class="repo_desc_container">
                         <p class="repo_name">
                           <a

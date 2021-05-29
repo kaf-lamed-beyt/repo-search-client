@@ -93,6 +93,9 @@ button {
   height: 55px;
   border-bottom: 1px solid var(--muted-strong);
   position: fixed;
+  animation: fadeIn 0.3s ease-in forwards 0.5s;
+  opacity: 0;
+  z-index: 2;
 }
 
 .result_header ul {
@@ -138,6 +141,12 @@ button {
   padding: 0 45px;
   margin-top: 2%;
   z-index: 2;
+  animation: fadeIn 0.3s ease-in forwards 0.7s;
+  opacity: 0;
+}
+
+.user_profile {
+  width: 38%;
 }
 
 .user_profile img {
@@ -165,6 +174,16 @@ button {
   height: 100%;
   padding: 0 30px;
   width: 100%;
+  animation: fadeIn 0.3s ease-in forwards 0.9s;
+  opacity: 0;
+}
+
+.repos_wrapper input {
+  width: 100%;
+  height: 28px;
+  border-radius: 5px;
+  border: 1px solid var(--muted-strong);
+  padding: 0 14px;
 }
 
 .repos_wrapper .repository {
@@ -195,7 +214,7 @@ button {
 
 .repository .repo_description {
   padding: 0 0 12px 0;
-  width: 400px;
+  width: 300px;
   height: 220px;
   font-size: 13px;
 }
@@ -245,28 +264,6 @@ button {
   display: flex;
   top: 50%;
   transform: translateY(-50%);
-}
-
-.loader div {
-  height: 20px;
-  width: 20px;
-  margin: 0 50px 0 0;
-  border-radius: 50%;
-  background: var(--primary);
-  animation: balls 0.3s ease-in forwards;
-  opacity: 0;
-}
-
-.loader div:nth-child(1) {
-  animation-delay: 0.2s;
-}
-
-.loader div:nth-child(2) {
-  animation-delay: 0.4s;
-}
-
-.loader div:nth-child(3) {
-  animation-delay: 0.6s;
 }
 
 @media only screen and (max-width: 576px) {
@@ -333,6 +330,10 @@ button {
     display: flex;
   }
 
+  .user_profile {
+    width: 100%;
+  }
+
   .user_profile img {
     height: 55px;
     width: 55px;
@@ -387,7 +388,6 @@ button {
 
   .repository .repo_description {
     padding: 0 0 12px 0;
-    width: 265px;
     height: 20%;
     font-size: 13px;
   }
@@ -400,7 +400,12 @@ button {
   }
 
   .repository .repo_details ul li {
-    padding: 0 30px 0 0;
+    padding: 0 10px 0 0;
+  }
+
+  .repo_details li:nth-child(2),
+  li:nth-child(3) {
+    display: none;
   }
 
   .repository .star_button {
@@ -408,7 +413,8 @@ button {
     border: 1px solid var(--muted-strong);
     border-radius: 4px;
     outline: none;
-    margin-top: 35px;
+    width: 100%;
+    margin: 35px 0 0 15px;
   }
 
   .repository .star_button:hover {
