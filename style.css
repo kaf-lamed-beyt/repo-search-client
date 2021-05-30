@@ -9,6 +9,15 @@
   font-family: "KoHo", sans-serif;
 }
 
+/* disabling the zoom in effect upon the click of 
+  an input field on iPhones
+*/
+input[type="text"],
+input[type="number"],
+textarea {
+  font-size: 16px;
+}
+
 #root {
   height: 100%;
 }
@@ -169,6 +178,7 @@ button {
 
 .user_bio .bio_details {
   padding: 20px 0;
+  width: 100%;
 }
 
 .repos_wrapper {
@@ -359,7 +369,7 @@ button {
 
   .user_bio .bio_details {
     padding: 20px 0;
-    width: 260px;
+    width: 300px;
   }
 
   .repos_wrapper .repository {
