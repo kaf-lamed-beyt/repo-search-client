@@ -228,6 +228,7 @@ button {
   width: 380px;
   height: 50px;
   font-size: 13px;
+  color: var(--muted-text);
 }
 
 .repository .repo_details ul {
@@ -240,6 +241,7 @@ button {
 .repository .repo_details ul li {
   padding: 0 30px 0 0;
   white-space: nowrap;
+  color: var(--muted-text);
 }
 
 .repository .btn-container {
